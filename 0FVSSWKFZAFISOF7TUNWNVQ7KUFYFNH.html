@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Проверка справки COVID-19
+    </title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ol,
+        ul {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        body {
+            margin: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 4vw;
+        }
+
+        table {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <table style="border: 1px solid #555; width:100%; max-width: 640px; margin: 0px auto">
+        <tr>
+            <td style="padding: 10px;">
+                <table>
+                    <tr>
+                        <td><img
+                                src="data:image/png;base64,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" />
+                        </td>
+                        <td style="font-weight: bold; text-align: center;">klinika-evromed.ru</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td style="font-weight: bold; font-size: larger;">
+                            Проверка справки COVID-19
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Verification of a COVID-19 document
+                        </td>
+                    </tr>
+                    
+                </table>
+                <table>
+                    <tr>
+                        <td style="width: 20%; padding: 0 5%; text-align: center;">
+                            <img style="width: 95%;"
+                                src="data:image/png;base64,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" />
+                        </td>
+                        <td style="color: green">
+                            <strong>Справка действительна</strong>
+                            
+                            <br>
+                            The document is valid
+                            
+                        </td>
+                    </tr>
+                </table>
+                
+                <table>
+                    <tr>
+                        <td>
+                            Пациент<br>
+                            <strong>
+                                
+                                Кар***в
+                                А.
+                                .
+                                
+                            </strong>
+                        </td>
+                        <td>
+                            Год рождения<br>
+                            <strong>
+                                1984
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            № загранпаспорта
+                            <br>
+                            <strong>
+                                
+                                ** *******
+                                
+                            </strong>
+                        </td>
+                        <td>
+                            Пол
+                            <br>
+                            <strong>
+                                
+                                мужской
+                                
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            ПЦР РНК вируса COVID-19 (SARS-CoV-2) (кач.)<br>
+                            <strong>Не обнаружено</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Взятие образца
+                            <br>
+                            <strong>22 нояб. 2021 г., 16:24:00 (UTC)</strong>
+                        </td>
+                        <td>
+                            Выдача результата
+                            <br>
+                            <strong>22 нояб. 2021 г., 18:58:00 (UTC)</strong>
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                
+
+                <table>
+                    <tr>
+                        <td>
+                            Patient<br>
+                            <strong>
+                                Kar***v
+                                A.
+                                .
+                            </strong>
+                        </td>
+                        <td>
+                            Year of birth<br>
+                            <strong>
+                                1984
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Passport number
+                            <br>
+                            <strong>
+                                ** *******
+                                </strong>
+                        </td>
+                        <td>
+                            Sex
+                            <br>
+                            <strong>
+                                
+                                male
+                                
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            Coronavirus COVID-19 (SARS-CoV-2, RNA)<br>
+                            <strong>Negative</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Sample collection
+                            <br>
+                            <strong>Nov 22, 2021, 4:24:00 PM (UTC)</strong>
+                        </td>
+                        <td>
+                            Result report
+                            <br>
+                            <strong>Nov 22, 2021, 6:58:00 PM (UTC)</strong>
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <table>
+                    <tr>
+                        <td>
+                            Контактный центр ЕВРОМЕД
+
+                            <br>
+                            Evromed support
+                            
+
+                            <br>
+                            <strong>+7 (861) 205-5050</strong>
+
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
